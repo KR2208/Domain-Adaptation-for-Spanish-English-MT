@@ -96,8 +96,8 @@ All workflows are written as Jupyter notebooks. They can run in Google Colab (or
 4. `translate_all_icl_batched` and `translate_all_rag_batched` run the batched inference loops (adjust `batch_size`, `max_new_tokens`, `temperature`, `top_p` as desired).
 5. Evaluation uses `evaluate_all_metrics`, which wraps SacreBLEU/chrF, METEOR, and COMET. Outputs are written to disk for traceability.
 6. Observed metrics on 5k sentences:  
-   - **ICL (top-1)**: BLEU 47.5 / chrF 71.4 / METEOR 0.729 / COMET 0.872 @ **2.2 sent/s**.  
-   - **RAG (top-5)**: BLEU 48.2 / chrF 72.0 / METEOR 0.736 / COMET 0.875 @ **3.6 sent/s** thanks to larger batches.
+   - **ICL (top-1)**: BLEU 47.5 / chrF 71.4 / METEOR 0.729 / COMET 0.872   
+   - **RAG (top-5)**: BLEU 48.2 / chrF 72.0 / METEOR 0.736 / COMET 0.875 
 
 ### 3. QLoRA Fine-Tuning (`Fine-tuning.ipynb`)
 
@@ -143,10 +143,10 @@ You can reuse the evaluation cell standalone by pointing `OUT_PATH`, `REF_PATH`,
 
 | Approach | Data Touchpoint | BLEU ↑ | chrF ↑ | METEOR ↑ | COMET ↑ | Throughput |
 | --- | --- | --- | --- | --- | --- | --- |
-| Zero-shot Llama 3.1 | None beyond prompt | 33.4 | 65.1 | 0.642 | 0.830 | 4.4 sent/s |
-| ICL (top-1) | FAISS retrieval over 10k pairs | 47.5 | 71.4 | 0.729 | 0.872 | 2.2 sent/s |
-| RAG (top-5) | Same retriever | 48.2 | 72.0 | 0.736 | 0.875 | 3.6 sent/s |
-| QLoRA (10k pairs) | Full PEFT training | **49.0** | **72.1** | **0.750** | **0.879** | 2.2 sent/s (with batching) |
+| Zero-shot Llama 3.1 | None beyond prompt | 33.4 | 65.1 | 0.642 | 0.830 | 2.8 sent/s |
+| ICL (top-1) | FAISS retrieval over 10k pairs | 47.5 | 71.4 | 0.729 | 0.872 | 2.4 sent/s |
+| RAG (top-5) | Same retriever | 48.2 | 72.0 | 0.736 | 0.875 | 2.1 sent/s |
+| QLoRA (10k pairs) | Full PEFT training | **49.0** | **72.1** | **0.750** | **0.879** | 3.2 sent/s (with batching) |
 
 Key takeaways:
 
