@@ -144,7 +144,7 @@ You can reuse the evaluation cell standalone by pointing `OUT_PATH`, `REF_PATH`,
 | Approach | Data Touchpoint | BLEU ↑ | chrF ↑ | METEOR ↑ | COMET ↑ | Throughput |
 | --- | --- | --- | --- | --- | --- | --- |
 | Zero-shot Llama 3.1 | None beyond prompt | 33.4 | 65.1 | 0.642 | 0.830 | 2.8 sent/s |
-| ICL (top-1) | FAISS retrieval over 10k pairs | 47.5 | 71.4 | 0.729 | 0.872 | 2.4 sent/s |
+| ICL (top-1) | FAISS retrieval over 50k pairs | 47.5 | 71.4 | 0.729 | 0.872 | 2.4 sent/s |
 | RAG (top-5) | Same retriever | 48.2 | 72.0 | 0.736 | 0.875 | 2.1 sent/s |
 | QLoRA (10k pairs) | Full PEFT training | **49.0** | **72.1** | **0.750** | **0.879** | 3.2 sent/s (with batching) |
 
