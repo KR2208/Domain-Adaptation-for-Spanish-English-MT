@@ -152,7 +152,7 @@ Key takeaways:
 
 - Even a single retrieved example closes ~14 BLEU vs. zero-shot.
 - RAG gains a modest +0.7 BLEU with better batching throughput after amortizing prompt cost.
-- QLoRA is the only method that breaks 49 BLEU / 0.75 METEOR, but it requires several hours of GPU time upfront; inference speed matches ICL once the adapter is loaded.
+- QLoRA is the only method that breaks 49 BLEU / 0.75 METEOR, but it requires several hours of GPU time upfront; 
 
 ---
 
